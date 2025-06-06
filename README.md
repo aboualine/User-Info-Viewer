@@ -98,3 +98,7 @@ php -S localhost:8000
 
 Created by Aboualine Mohamed as a personal learning milestone.
 This is a beginner-friendly demonstration of connecting backend and frontend using two different server-side languages: Java and PHP.
+
+## ⚖️ License
+
+This project is open-source under the **MIT License**.
