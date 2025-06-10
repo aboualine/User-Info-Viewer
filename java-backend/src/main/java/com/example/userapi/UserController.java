@@ -5,8 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,4 +33,18 @@ public class UserController {
 
         return users;
     }
+    @RestController
+    @RequestMapping("/users")
+    @CrossOrigin(origins = "*")
+    public class UserController {
+
+        @Autowired
+        private UserDAO userDAO;
+
+        @GetMapping
+        public List<User> getUsers() {
+            return userDAO.getAllUsers();
+        }
+    }
+
 }
